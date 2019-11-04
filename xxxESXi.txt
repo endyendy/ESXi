@@ -1,0 +1,260 @@
+https://www.powershellgallery.com/packages/VMware.PowerCLI/11.2.0.12780525
+
+■レジストリ
+2か所を設定
+
+■PowerShell起動
+
+１）クリーン
+UNInstall-Module -Name VMware.PowerCLI
+⇒C:\Program Files\WindowsPowerShell\Modules配下のvmware.*のフォルダを削除
+
+
+https://code.vmware.com/web/tool/6.3%20R1/vmware-powercli
+デスクトップのpowercliを起動、エンター
+
+PowerCLI C:\> cd C:\ESXi6.7\
+PowerCLI C:\ESXi6.7> .\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip
+
+
+
+
+★できた！
+
+          Welcome to VMware vSphere PowerCLI!
+
+Log in to a vCenter Server or ESX host:              Connect-VIServer                                                   To find out what commands are available, type:       Get-VICommand                                                      To show searchable help for all PowerCLI commands:   Get-PowerCLIHelp                                                   Once you've connected, display all virtual machines: Get-VM                                                             If you need more help, visit the PowerCLI community: Get-PowerCLICommunity                                                                                                                                                                             Copyright (C) VMware, Inc. All rights reserved.                                                                  
+
+
+Participate in VMware Customer Experience Improvement Program (CEIP)
+VMware's Customer Experience Improvement Program ("CEIP") provides VMware with information that enables VMware to
+improve its products and services and to fix problems. By choosing to participate in CEIP, you agree that VMware may
+collect technical information about your use of VMware products and services on a regular basis. This information does
+not personally identify you.
+
+For more details: press Ctrl+C to exit this prompt and type "help about_ceip" to see the related help article.
+
+You can join or leave the program at any time by executing: Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP
+$true or $false.
+[J] Join  [L] Leave  [?] ヘルプ (既定値は "J"):
+PowerCLI C:\>
+PowerCLI C:\>
+PowerCLI C:\> cd C:\ESXi6.7\
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7> .\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip
+
+This is ESXi-Customizer-PS Version 2.6.0 (visit https://ESXi-Customizer-PS.v-front.de for more information!)
+(Call with -help for instructions)
+
+Logging to C:\Users\user\AppData\Local\Temp\ESXi-Customizer-PS-15816.log ...
+
+Running with PowerShell version 5.1 and VMware PowerCLI version 6.3.0.0
+
+Connecting the VMware ESXi Online depot ... [OK]
+
+Connecting the V-Front Online depot ... [OK]
+
+Getting Imageprofiles, please wait ... [OK]
+
+Using Imageprofile ESXi-6.7.0-20190802001-standard ...
+(dated 08/08/2019 09:57:09, AcceptanceLevel: PartnerSupported,
+Updates ESXi 6.7 Image Profile-ESXi-6.7.0-20190802001-standard)
+
+Load additional VIBs from Online depots ...
+   Add VIB net-tulip 1.1.15-1 [New AcceptanceLevel: CommunitySupported] [OK, added]
+
+Exporting the Imageprofile to 'C:\ESXi6.7\ESXi-6.7.0-20190802001-standard-customized.iso'. Please be patient ...
+
+警告: The image profile fails validation.  The ISO / Offline Bundle will still be generated but may contain errors and may not boot or be functional.  Errors:
+警告:   VIB DEC_bootbank_net-tulip_1.1.15-1 requires vmkapi_2_1_0_0, but the requirement cannot be satisfied within the ImageProfile. However, additional VIB(s)
+VMware_bootbank_esx-base_5.5.0-0.14.1598313, VMware_bootbank_esx-base_6.0.0-3.87.8934903, VMware_bootbank_esx-base_5.1.0-3.52.2575044,
+VMware_bootbank_esx-base_6.0.0-3.100.9313334, VMware_bootbank_esx-base_5.1.0-0.5.838463, VMware_bootbank_esx-base_6.0.0-3.57.5050593,
+VMware_bootbank_esx-base_6.0.0-0.0.2494585, VMware_bootbank_esx-base_6.5.0-1.29.6765664, VMware_bootbank_esx-base_6.0.0-0.8.2809111,
+VMware_bootbank_esx-base_5.1.0-1.19.1312874, VMware_bootbank_esx-base_6.5.0-2.71.10868328, VMware_bootbank_esx-base_6.0.0-3.76.6856897,
+VMware_bootbank_esx-base_5.1.0-1.15.1142907, VMware_bootbank_esx-base_5.1.0-2.29.1900470, VMware_bootbank_esx-base_5.1.0-3.60.3070626,
+VMware_bootbank_esx-base_5.1.0-3.82.3872638, VMware_bootbank_esx-base_6.5.0-2.61.10175896, VMware_bootbank_esx-base_6.5.0-3.96.13932383,
+VMware_bootbank_esx-base_6.5.0-0.11.5146843, VMware_bootbank_esx-base_5.5.0-3.114.7967571, VMware_bootbank_esx-base_5.5.0-1.28.1892794,
+VMware_bootbank_esx-base_6.0.0-2.37.3825889, VMware_bootbank_esx-base_6.0.0-0.6.2715440, VMware_bootbank_esx-base_6.5.0-2.64.10390116,
+VMware_bootbank_esx-base_5.5.0-2.54.2403361, VMware_bootbank_esx-base_5.1.0-2.47.2323231, VMware_bootbank_esx-base_6.0.0-0.11.2809209,
+VMware_bootbank_esx-base_5.1.0-3.50.2323236, VMware_bootbank_esx-base_5.1.0-1.16.1157734, VMware_bootbank_esx-base_6.0.0-1.20.3073146,
+VMware_bootbank_esx-base_6.0.0-2.34.3620759, VMware_bootbank_esx-base_6.5.0-3.101.14320405, VMware_bootbank_esx-base_5.5.0-2.62.2718055,
+VMware_bootbank_esx-base_6.5.0-1.26.5969303, VMware_bootbank_esx-base_6.5.0-0.9.4887370, VMware_bootbank_esx-base_5.1.0-1.22.1472666,
+VMware_bootbank_esx-base_5.1.0-0.10.1021289, VMware_bootbank_esx-base_6.0.0-3.113.13003896, VMware_bootbank_esx-base_5.1.0-3.85.3872664,
+VMware_bootbank_esx-base_6.0.0-3.58.5224934, VMware_bootbank_esx-base_5.5.0-3.107.7618464, VMware_bootbank_esx-base_5.5.0-0.0.1331820,
+VMware_bootbank_esx-base_5.5.0-3.86.4179631, VMware_bootbank_esx-base_5.5.0-3.71.3116895, VMware_bootbank_esx-base_6.0.0-0.14.3017641,
+VMware_bootbank_esx-base_6.0.0-3.72.6765062, VMware_bootbank_esx-base_6.0.0-0.5.2615704, VMware_bootbank_esx-base_6.5.0-0.14.5146846,
+VMware_bootbank_esx-base_6.5.0-2.83.13004031, VMware_bootbank_esx-base_6.0.0-3.66.5485776, VMware_bootbank_esx-base_5.1.0-0.9.914609,
+VMware_bootbank_esx-base_5.1.0-0.0.799733, VMware_bootbank_esx-base_6.5.0-2.57.9298722, VMware_bootbank_esx-base_5.5.0-3.103.6480267,
+VMware_bootbank_esx-base_6.5.0-1.33.7273056, VMware_bootbank_esx-base_6.5.0-2.50.8294253, VMware_bootbank_esx-base_5.1.0-2.41.2191354,
+VMware_bootbank_esx-base_5.5.0-1.18.1881737, VMware_bootbank_esx-base_5.1.0-2.28.1743533, VMware_bootbank_esx-base_6.0.0-1.26.3380124,
+VMware_bootbank_esx-base_6.0.0-3.129.14513180, VMware_bootbank_esx-base_5.5.0-3.81.3343343, VMware_bootbank_esx-base_6.0.0-3.79.6921384,
+VMware_bootbank_esx-base_5.5.0-2.42.2302651, VMware_bootbank_esx-base_5.5.0-3.106.6480324, VMware_bootbank_esx-base_6.0.0-2.40.4179598,
+VMware_bootbank_esx-base_5.1.0-1.20.1312873, VMware_bootbank_esx-base_5.5.0-3.124.9919047, VMware_bootbank_esx-base_5.5.0-3.120.9313066,
+VMware_bootbank_esx-base_5.1.0-3.55.2583090, VMware_bootbank_esx-base_5.1.0-2.27.1743201, VMware_bootbank_esx-base_6.0.0-1.22.3247720,
+VMware_bootbank_esx-base_5.5.0-3.95.4345813, VMware_bootbank_esx-base_5.5.0-3.117.8934887, VMware_bootbank_esx-base_5.5.0-1.16.1746018,
+VMware_bootbank_esx-base_6.5.0-0.23.5969300, VMware_bootbank_esx-base_6.5.0-3.105.14874964, VMware_bootbank_esx-base_6.0.0-3.93.9239792,
+VMware_bootbank_esx-base_5.5.0-2.58.2638301, VMware_bootbank_esx-base_5.5.0-2.59.2702869, VMware_bootbank_esx-base_6.0.0-1.31.3568943,
+VMware_bootbank_esx-base_6.5.0-2.67.10719125, VMware_bootbank_esx-base_5.5.0-3.89.4179633, VMware_bootbank_esx-base_5.1.0-3.57.3021178,
+VMware_bootbank_esx-base_5.1.0-0.8.911593, VMware_bootbank_esx-base_5.5.0-3.75.3247226, VMware_bootbank_esx-base_6.0.0-3.116.13635687,
+VMware_bootbank_esx-base_5.5.0-2.55.2456374, VMware_bootbank_esx-base_6.5.0-0.0.4564106, VMware_bootbank_esx-base_6.0.0-2.52.4600944,
+VMware_bootbank_esx-base_5.5.0-2.39.2143827, VMware_bootbank_esx-base_6.5.0-1.41.7967591, VMware_bootbank_esx-base_5.5.0-1.15.1623387,
+VMware_bootbank_esx-base_6.0.0-2.43.4192238, VMware_bootbank_esx-base_6.0.0-3.96.9239799, VMware_bootbank_esx-base_5.5.0-2.65.3029837,
+VMware_bootbank_esx-base_6.5.0-0.15.5224529, VMware_bootbank_esx-base_5.5.0-3.101.5230635, VMware_bootbank_esx-base_6.0.0-1.29.3568940,
+VMware_bootbank_esx-base_6.0.0-2.54.5047589, VMware_bootbank_esx-base_6.5.0-1.47.8285314, VMware_bootbank_esx-base_5.1.0-2.32.1904929,
+VMware_bootbank_esx-base_5.5.0-3.84.3568722, VMware_bootbank_esx-base_5.5.0-0.15.1746974, VMware_bootbank_esx-base_5.5.0-3.100.4722766,
+VMware_bootbank_esx-base_6.5.0-1.36.7388607, VMware_bootbank_esx-base_6.0.0-3.69.5572656, VMware_bootbank_esx-base_6.0.0-2.49.4558694,
+VMware_bootbank_esx-base_5.5.0-1.25.1892623, VMware_bootbank_esx-base_6.0.0-3.84.7967664, VMware_bootbank_esx-base_6.0.0-1.17.3029758,
+VMware_bootbank_esx-base_5.5.0-3.97.4756874, VMware_bootbank_esx-base_6.0.0-3.107.10474991, VMware_bootbank_esx-base_5.1.0-2.23.1483097,
+VMware_bootbank_esx-base_6.5.0-0.19.5310538, VMware_bootbank_esx-base_5.5.0-0.8.1474528, VMware_bootbank_esx-base_6.5.0-2.79.11925212,
+VMware_bootbank_esx-base_6.5.0-2.88.13635690, VMware_bootbank_esx-base_5.1.0-2.35.2000251, VMware_bootbank_esx-base_5.5.0-1.30.1980513,
+VMware_bootbank_esx-base_5.5.0-0.7.1474526, VMware_bootbank_esx-base_5.1.0-1.13.1117900, VMware_bootbank_esx-base_6.5.0-2.75.10884925,
+VMware_bootbank_esx-base_5.5.0-2.33.2068190, VMware_bootbank_esx-base_6.5.0-2.92.13873656, VMware_bootbank_esx-base_5.5.0-3.78.3248547,
+VMware_bootbank_esx-base_5.1.0-0.11.1063671, VMware_bootbank_esx-base_6.0.0-1.23.3341439, VMware_bootbank_esx-base_5.1.0-2.26.1612806,
+VMware_bootbank_esx-base_5.5.0-3.92.4345810, VMware_bootbank_esx-base_5.5.0-2.51.2352327, VMware_bootbank_esx-base_6.0.0-2.46.4510822,
+VMware_bootbank_esx-base_5.5.0-2.36.2093874, VMware_bootbank_esx-base_6.5.0-2.54.8935087, VMware_bootbank_esx-base_5.5.0-3.68.3029944,
+VMware_bootbank_esx-base_6.0.0-3.110.10719132, VMware_bootbank_esx-base_5.1.0-2.44.2191751, VMware_bootbank_esx-base_6.0.0-3.125.14475122,
+VMware_bootbank_esx-base_5.1.0-1.12.1065491 from depot can satisfy this requirement.
+
+All done.
+
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7>
+PowerCLI C:\ESXi6.7> ls
+
+
+    ディレクトリ: C:\ESXi6.7
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       2019/11/03     18:08           5458 Enable-NestedVm.ps1
+-a----       2019/11/04     18:58      329852928 ESXi-6.7.0-20190802001-standard-customized.iso
+-a----       2019/11/03     18:05          21003 ESXi-Customizer-PS-v2.6.0.ps1
+-a----       2019/11/04     14:23            480 strongcrypto4-enable.reg_txt
+-a----       2019/11/04     18:53           3672 会社のESXi.txt
+
+
+PowerCLI C:\ESXi6.7>
+
+
+
+★できた
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXSet-ExecutionPolicy Unrestricted
+Set-ExecutionPolicy RemoteSigned
+
+
+
+Install-Module -Name VMware.PowerCLI -Force -AllowClobber
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+.\ESXi-Customizer-PS-vX.X.X.ps1 -sip -vft -load net-tulip
+⇒VMware_bootbank_esx-base_6.5.0-3.96.13932383
+　⇒「.\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip」の実行エラーログから最新サポートを検索
+　　⇒69 : ESXi-6.5.0-20171204001-standard（？）
+
+
+
+
+
+
+
+
+
+
+
+
+.\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip
+
+
+
+----------------------------
+https://tech-mmmm.blogspot.com/2018/06/powershell-gallerypowercli.html
+
+
+なお、インストールされたモジュールは、以下フォルダに配置される。
+C:\Program Files\WindowsPowerShell\Modules
+
+
+PS C:\> Uninstall-Module -Name VMware.PowerCLI
+PS C:\> Get-Module -ListAvailable -Name VMware* | Uninstall-Module　←★依存関係のエラーは無視する
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Cloud
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Vds
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Core
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Cis.Core
+PS C:\> Uninstall-Module -Name VMware.Vim
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Common
+PS C:\> Uninstall-Module -Name VMware.VimAutomation.Sdk
+
+
+-------------------------------------
+Install-Module -Name VMware.PowerCLI -AllowClobber
+
+Install-Module -Name VMware.PowerCLI -RequiredVersion 11.2.0.12780525 -AllowClobber
+
+
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip -v67
+
+
+
+
+-------------------------------------
+
+
+-----------------------------
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip -v60
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip
+.\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip
+
+
+
+
+
+https://dscottraynsford.wordpress.com/2016/04/22/install-a-vmware-esxi-6-0-hypervisor-in-a-hyper-v-vm/
+
+
+
+<?>
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip
+.\ESXi-Customizer-PS-v2.6.0.ps1 -v67 -vft -load net-tulip
+.\ESXi-Customizer-PS-v2.6.0.ps1 -v20190802001 -vft -load net-tulip
+.\ESXi-Customizer-PS-v2.6.0.ps1 -v20170604 -vft -load net-tulip
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip -v60
+
+
+＜参考＞
+.\ESXi-Customizer-PS-v2.6.0.ps1 -sip -vft -load net-tulip
+
+＜参考＞
+https://szkhaven.com/2019/04/19/esx-on-hyper-v_windows10on_esxi/
+https://mt9276.hatenablog.com/entry/2019/07/13/223113
+https://mt9276.hatenablog.com/entry/2019/05/13/063128
+https://blog.hitsujin.jp/entry/2018/09/20/214222
+
+https://ozuma.hatenablog.jp/entry/20171203/1512296181
+
+http://pubinf.blog.jp/archives/1061974470.html
+
+https://dscottraynsford.wordpress.com/2016/04/22/install-a-vmware-esxi-6-0-hypervisor-in-a-hyper-v-vm/
+
+
+レジ
+https://blog.hitsujin.jp/entry/2018/09/20/214222
+
+
+MS
+https://docs.microsoft.com/en-us/security-updates/securityadvisories/2015/2960358#suggested-actions
